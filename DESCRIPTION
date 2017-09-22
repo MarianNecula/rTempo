@@ -1,0 +1,16 @@
+Package: rTempo
+Date: 2017-09-20
+Type: Package
+Title: R interface for Tempo Online database
+Version: 0.1.0
+Authors@R: c(
+    person("Iulia", "Toma", role = "aut"),  
+    person("Ana-Maria", "Tiru", role = "aut"),
+    person("Marian" , "Necula", role = c("aut", "cre"), email = "marian.necula@gmail.com"))
+Description: The package provides tools for downloading tables from Tempo Online database.
+Encoding: ASCII
+Depends:
+    httr,
+    rvest, 
+    readr
+RoxygenNote: 6.0.1

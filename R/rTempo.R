@@ -1,0 +1,16 @@
+#' @title rTempo
+#' @description Downloading tables from TEMPO ONLINE is as easy as 1, 2, 3
+#' @details rTempo is a R interface for Tempo Online database. It provides functions to
+#' navigate around Tempo Online and download 1 or more tables of interest with the help of the
+#' \code{\link{nav_tempo}} function or with \code{\link{search_tempo}}, which provides an interface
+#' for the search functionality available in the National Institute of Statistics, shortend NIS, site. The prerequisite
+#' for downloading a table is to have a valid account for Tempo Online, which can be created in the NIS site.
+#' Then \code{\link{login_tempo}} function is used for authenticating in order to create a valid http session
+#' for downloading. The package also provides a function, \code{\link{dir_tempo}}, to create a working directory for
+#' storing the tables, separately from other code and data and a function for viewing the definitions and metadata
+#' associated with the table in R Studio's Viewer pane, \code{\link{def_tempo}}. After the downloads finish
+#' a \code{\link{logout_tempo}} function provides the tools to end the session and reset the working directory to
+#' the previous values.
+#' @author Toma, I., Tiru A., Necula, M.
+#' @keywords internal
+"_PACKAGE"
