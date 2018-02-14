@@ -10,27 +10,25 @@
 #' @export
 login_tempo <- function(usr = NULL, passwd = NULL) {
   if (is.null(usr) != TRUE && is.null(passwd) != TRUE) {
-  message("Please select Tempo Online language:\n 1. Romanian 2. English")
-  .InsEnv$lang_number <- readline()
-  if(.InsEnv$lang_number == 1){
-    .InsEnv$url_tempo <- "http://statistici.insse.ro/shop/"
-    .InsEnv$lang_ins <- "ro"
-  } else{
-    .InsEnv$url_tempo <- "http://statistici.insse.ro/shop/?lang=en"
-    .InsEnv$lang_ins <- "ro"
-        }
+      message("Please select Tempo Online language:\n 1. Romanian 2. English")
+      .InsEnv$lang_number <- readline()
+      if(.InsEnv$lang_number == 1){
+        .InsEnv$url_tempo <- "http://statistici.insse.ro/shop/"
+        .InsEnv$lang_ins <- "ro"
+      } else {
+        .InsEnv$url_tempo <- "http://statistici.insse.ro/shop/?lang=en"
+        .InsEnv$lang_ins <- "en"
+      }
 
     ins_auth <- rvest::html_session(.InsEnv$url_tempo)
     form_login_u <- ins_auth %>% rvest::html_form()
-    form_login_f <-
-      rvest::set_values(form_login_u[[1]], Login = usr, Password = passwd)
+    form_login_f <- rvest::set_values(form_login_u[[1]], Login = usr, Password = passwd)
 
     .InsEnv$session <- rvest::submit_form(ins_auth, form_login_f, submit = NULL)
 
   }
   else {
     message("Please supply a valid username and password")
-
   }
   return(.InsEnv$session)
 }
